@@ -9,7 +9,7 @@ RUN git clone --depth 1 https://github.com/ggml-org/llama.cpp.git
 
 RUN cmake llama.cpp -B llama.cpp/build -DGGML_CUDA=ON -DBUILD_SHARED_LIBS=OFF
 
-RUN cmake --build llama.cpp/build --config Release -j --target llama-server --clean-first
+RUN cmake --build llama.cpp/build --config Release -j 4 --target llama-server
 
 FROM docker.io/nvidia/cuda:12.0.0-base-ubuntu22.04
 
