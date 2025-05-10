@@ -53,6 +53,8 @@ jobs:
             podman run -d \
             -p 8001:8080 \
             -e LLAMA_ARG_N_GPU_LAYERS=0 \
+            -e LLAMA_ARG_CACHE_TYPE_K=f16 \
+            -e LLAMA_ARG_CACHE_TYPE_V=f16 \
             -e LLAMA_ARG_MODEL=${{ env.MODEL }}-${{ env.QUANT }}.gguf \
             -v ./${{ env.MODEL }}-${{ env.QUANT }}.gguf:/${{ env.MODEL }}-${{ env.QUANT }}.gguf \
             localhost/${{ env.IMAGE_NAME }}
