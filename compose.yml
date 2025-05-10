@@ -4,7 +4,7 @@ services:
     image: ghcr.io/kth8/llama-server-cuda:latest
     init: true
     ports:
-      - "8080:8080"
+      - "8001:8080"
     volumes:
       - llama:/root/.cache
     environment:

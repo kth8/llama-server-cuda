@@ -12,7 +12,7 @@ from openai import OpenAI
 from magic import Magic
 mime_detector = Magic(mime=True)
 
-client = OpenAI(base_url="http://127.0.0.1:8080/v1", api_key="llama.cpp")
+client = OpenAI(base_url="http://127.0.0.1:8001/v1", api_key="llama.cpp")
 
 url = "https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png"
 response_content = httpx.get(url, follow_redirects=True).content
@@ -44,4 +44,3 @@ try:
 except Exception as e:
     print(f"\nAn error occurred: {str(e)}")
 print()
-
